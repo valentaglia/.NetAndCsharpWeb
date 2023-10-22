@@ -1,0 +1,45 @@
+﻿@model PROYECTO_TP_PNT1.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row" id="detalles">
+    <h1 class="titulo-cliente">ELIMINAR CLIENTE</h1>
+    <hr />
+    <div>
+        <dl class="row" id="detalle-row">
+            <dt class="col-sm-5">
+                -  @Html.DisplayNameFor(model => model.nombre) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+            <dt class="col-sm-5">
+                -  @Html.DisplayNameFor(model => model.apellido) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.apellido)
+            </dd>
+            <dt class="col-sm-5">
+                -  @Html.DisplayNameFor(model => model.dni) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.dni)
+            </dd>
+            <dt class="col-sm-5">
+                -  @Html.DisplayNameFor(model => model.edad) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.edad)
+            </dd>
+
+            <form asp-action="Delete" id="botones-form">
+
+                <input type="submit" value="Eliminar" class="btn btn-danger bg-danger" />
+                <a asp-action="Index" class="btn bg-dark boton-volver">Volver</a>
+            </form>
+        </dl>
+    </div>
+    <span>@ViewBag.ClienteConReserva</span>
+</div>

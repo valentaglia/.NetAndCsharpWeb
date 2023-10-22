@@ -1,0 +1,53 @@
+﻿@model PROYECTO_TP_PNT1.Models.Reserva
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row" id="detalles">
+    <h1 class="titulo-cliente">DETALLES DE LA RESERVA</h1>
+    <hr />
+    <div >
+        <dl class="row" id="detalle-row">
+    
+                <dt class="col-sm-5">
+                  -  @Html.DisplayNameFor(model => model.entrada) :
+                </dt>
+            
+            <dd class="col-sm-5">
+                 @Html.DisplayFor(model => model.entrada)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.salida) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.salida)
+            </dd>
+
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.desayuno) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.desayuno)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.cantPersonas) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.cantPersonas)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.CantHabitaciones) :
+            </dt>
+            <dd class="col-sm-5" id="texto">
+                @Html.DisplayFor(model => model.CantHabitaciones)
+            </dd>
+
+            <div id="botones-form">
+                <a asp-action="Edit" asp-route-id="@Model.idReserva" id="button1" class="btn btn-success bg-success">Editar</a>
+                <a asp-action="Index" class="btn bg-dark boton-volver">Volver</a>
+            </div>
+        </dl>
+    </div>
+</div>
+

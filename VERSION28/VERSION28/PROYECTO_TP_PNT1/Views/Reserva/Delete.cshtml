@@ -1,0 +1,55 @@
+﻿@model PROYECTO_TP_PNT1.Models.Reserva
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row" id="detalles">
+    <h1 class="titulo-cliente">ELIMINAR RESERVA</h1>
+    <hr />
+    <div>
+        <dl class="row" id="detalle-row">
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.entrada) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.entrada) 
+            </dd>
+            <dt class="col-sm-5">
+               - @Html.DisplayNameFor(model => model.salida) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.salida)
+            </dd>
+            
+
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.desayuno)  :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.desayuno)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.cantPersonas) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.cantPersonas)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.CantHabitaciones) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.CantHabitaciones)
+            </dd>
+
+            <form asp-action="Delete" id="botones-form">
+               
+                <input type="submit" value="Eliminar" class="btn btn-danger bg-danger" /> 
+                <a asp-action="Index" class="btn bg-dark boton-volver">Volver</a>
+            </form>
+
+        </dl>
+
+
+    </div>
+</div>

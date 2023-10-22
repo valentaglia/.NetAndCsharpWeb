@@ -1,0 +1,66 @@
+﻿@model PROYECTO_TP_PNT1.Models.Reserva
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row" id="formulario">
+    <h1 class="titulo-cliente">EDITAR RESERVA</h1>
+    <hr />
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div>
+                @ViewBag.ReservaExistente
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idReserva" />
+            <div class="form-group">
+                <label asp-for="entrada" class="control-label"></label>
+                <input asp-for="entrada" class="form-control" />
+                <span asp-validation-for="entrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salida" class="control-label"></label>
+                <input asp-for="salida" class="form-control" />
+                <span asp-validation-for="salida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <h5>Seleccionar Alojamiento</h5>
+
+                <select id="select" asp-for="idAlojamiento" asp-items="@(new SelectList(ViewBag.almessage,"idAlojamiento","nombre"))">
+                </select>
+
+            </div>
+            <div class="form-group">
+                <h5>Seleccionar Cliente</h5>
+
+                <select id="select" asp-for="idCliente" asp-items="@(new SelectList(ViewBag.clmessage,"idCliente","nombre"))">
+                </select>
+            </div>
+            <div>
+                @ViewBag.ErrorHabitaciones
+            </div>
+            <div class="form-group">
+                <label asp-for="cantPersonas" class="control-label"></label>
+                <input asp-for="cantPersonas" class="form-control" />
+                <span asp-validation-for="cantPersonas" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="desayuno" /> @Html.DisplayNameFor(model => model.desayuno)
+                </label>
+            </div>
+            <div class="form-group" id="botones-form">
+                <input type="submit" value="Guardar" class="btn btn-success bg-success" />
+                <a asp-action="Index" class="btn bg-dark boton-volver">Volver</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

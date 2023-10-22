@@ -1,0 +1,45 @@
+﻿@model PROYECTO_TP_PNT1.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="row" id="detalles">
+    <h1 class="titulo-cliente">DETALLES DEL CLIENTE</h1>
+    <hr />
+    <div >
+        <dl class="row" id="detalle-row" >
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.nombre) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.apellido) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.apellido)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.dni) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.dni)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.edad) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.edad)
+            </dd>
+
+            <div id="botones-form">
+                <a asp-action="Edit" asp-route-id="@Model.idCliente" id="button1" class="btn btn-success bg-success">Editar</a>
+                <a asp-action="Index" class="btn bg-dark boton-volver">Volver</a>
+            </div>
+        </dl>
+    </div>
+</div>

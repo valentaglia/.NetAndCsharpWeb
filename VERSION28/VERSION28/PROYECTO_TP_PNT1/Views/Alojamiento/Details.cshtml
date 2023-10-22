@@ -1,0 +1,43 @@
+﻿@model PROYECTO_TP_PNT1.Models.Alojamiento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="row" id="detalles">
+    <h1 class="titulo-cliente">DETALLES DEL ALOJAMIENTO</h1>
+    <hr />
+    <div>
+        <dl class="row" id="detalle-row">
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.nombre) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.direccion) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.direccion)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.cantHabitacionesDisponibles) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.cantHabitacionesDisponibles)
+            </dd>
+            <dt class="col-sm-5">
+              -  @Html.DisplayNameFor(model => model.tipo) :
+            </dt>
+            <dd class="col-sm-5">
+                @Html.DisplayFor(model => model.tipo)
+            </dd>
+            <div id="botones-form">
+                <a asp-action="Edit" asp-route-id="@Model.idAlojamiento" id="button1" class="btn btn-success bg-success">Editar</a>
+                <a asp-action="Index" class="btn bg-dark boton-volver">Volver</a>
+            </div>
+        </dl>
+    </div>
+</div>
